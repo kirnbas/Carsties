@@ -83,3 +83,5 @@ static IAsyncPolicy<HttpResponseMessage> GetPolicy()
         .HandleTransientHttpError()
         .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
         .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
+
+public partial class Program { }
